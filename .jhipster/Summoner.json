@@ -1,0 +1,52 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "matchHistory",
+            "relationshipNameCapitalized": "MatchHistory",
+            "relationshipFieldName": "matchHistory",
+            "otherEntityName": "matchHistory",
+            "relationshipType": "one-to-one",
+            "otherEntityNameCapitalized": "MatchHistory",
+            "ownerSide": true
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldNameCapitalized": "Name",
+            "fieldNameUnderscored": "name",
+            "fieldInJavaBeanMethod": "Name",
+            "fieldValidate": true,
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "region",
+            "fieldType": "String",
+            "fieldNameCapitalized": "Region",
+            "fieldNameUnderscored": "region",
+            "fieldInJavaBeanMethod": "Region",
+            "fieldValidate": true,
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "fieldsContainOwnerManyToMany": false,
+    "fieldsContainOwnerOneToOne": true,
+    "fieldsContainOneToMany": false,
+    "fieldsContainLocalDate": false,
+    "fieldsContainCustomTime": false,
+    "fieldsContainBigDecimal": false,
+    "fieldsContainDateTime": false,
+    "fieldsContainDate": false,
+    "changelogDate": "20150701144622",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "validation": true
+}

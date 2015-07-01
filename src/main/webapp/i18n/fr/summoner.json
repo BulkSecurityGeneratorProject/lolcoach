@@ -1,0 +1,21 @@
+{
+    "lolcoachApp": {
+        "summoner" : {
+            "home": {
+                "title": "Summoners",
+                "createLabel": "Créer un nouveau Summoner",
+                "createOrEditLabel": "Créer ou éditer un Summoner"
+            },
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Summoner {{ id }} ?"
+            },
+            "detail": {
+                "title": "Summoner"
+            },
+            "name": "Name",
+            "region": "Region",
+            "matchHistory": "matchHistory"
+        }
+    }
+}
+

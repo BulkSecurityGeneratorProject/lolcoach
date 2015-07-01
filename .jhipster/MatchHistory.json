@@ -1,0 +1,28 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "summoner",
+            "relationshipNameCapitalized": "Summoner",
+            "relationshipFieldName": "summoner",
+            "otherEntityName": "summoner",
+            "relationshipType": "one-to-one",
+            "otherEntityNameCapitalized": "Summoner",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "matchHistory"
+        }
+    ],
+    "fields": [],
+    "fieldsContainOwnerManyToMany": false,
+    "fieldsContainOwnerOneToOne": false,
+    "fieldsContainOneToMany": false,
+    "fieldsContainLocalDate": false,
+    "fieldsContainCustomTime": false,
+    "fieldsContainBigDecimal": false,
+    "fieldsContainDateTime": false,
+    "fieldsContainDate": false,
+    "changelogDate": "20150701144458",
+    "dto": "no",
+    "pagination": "no",
+    "validation": false
+}

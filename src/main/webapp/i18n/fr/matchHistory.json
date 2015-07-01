@@ -1,0 +1,19 @@
+{
+    "lolcoachApp": {
+        "matchHistory" : {
+            "home": {
+                "title": "MatchHistorys",
+                "createLabel": "Créer un nouveau MatchHistory",
+                "createOrEditLabel": "Créer ou éditer un MatchHistory"
+            },
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le MatchHistory {{ id }} ?"
+            },
+            "detail": {
+                "title": "MatchHistory"
+            },
+            "summoner": "summoner"
+        }
+    }
+}
+
