@@ -1,1 +1,2 @@
-# LoL Coach
+README for lolcoach
+==========================

@@ -1,0 +1,21 @@
+{
+  "generator-jhipster": {
+    "baseName": "lolcoach",
+    "packageName": "com.github.dudaaslaci.lolcoach",
+    "packageFolder": "com/github/dudaaslaci/lolcoach",
+    "authenticationType": "session",
+    "hibernateCache": "ehcache",
+    "clusteredHttpSession": "no",
+    "websocket": "no",
+    "databaseType": "sql",
+    "devDatabaseType": "h2Memory",
+    "prodDatabaseType": "mysql",
+    "searchEngine": "no",
+    "useCompass": false,
+    "buildTool": "maven",
+    "frontendBuilder": "grunt",
+    "javaVersion": "8",
+    "enableTranslation": true,
+    "rememberMeKey": "8e56b9586c18bba44a4009027071de21662f360b"
+  }
+}
