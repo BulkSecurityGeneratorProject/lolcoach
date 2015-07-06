@@ -67,7 +67,7 @@ public class SummonerResourceTest {
         ReflectionTestUtils.setField(summonerResource, "summonerService", summonerService);
         ReflectionTestUtils.setField(summonerService, "summonerRepository", summonerRepository);
         ReflectionTestUtils.setField(summonerService, "riotService", riotService);
-        
+
         this.restSummonerMockMvc = MockMvcBuilders.standaloneSetup(summonerResource).build();
     }
 
@@ -78,6 +78,7 @@ public class SummonerResourceTest {
         summoner.setRegion(DEFAULT_REGION);
         summoner.setId(DEFAULT_ID);
         when(riotService.getSummonerByName(DEFAULT_REGION, DEFAULT_NAME)).thenReturn(summoner);
+        when(riotService.getSummonerById(DEFAULT_REGION, DEFAULT_ID)).thenReturn(summoner);
     }
 
     @Test
@@ -87,8 +88,8 @@ public class SummonerResourceTest {
         summonerRepository.saveAndFlush(summoner);
 
         // Get the summoner
-        restSummonerMockMvc.perform(get("/api/summoners/{id}", summoner.getId())).andExpect(status().isOk())
-                .andExpect(content().contentType(MediaType.APPLICATION_JSON))
+        restSummonerMockMvc.perform(get("/api/summoners/{region}/{id}", summoner.getRegion(), summoner.getId()))
+                .andExpect(status().isOk()).andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 // .andExpect(jsonPath("$.id").value(summoner.getId().intValue()))
                 .andExpect(jsonPath("$.name").value(DEFAULT_NAME.toString()))
                 .andExpect(jsonPath("$.region").value(DEFAULT_REGION.toString()));
@@ -104,7 +105,8 @@ public class SummonerResourceTest {
     @Test
     @Transactional
     public void getSummonerByName() throws Exception {
-        restSummonerMockMvc.perform(get("/api/summoners/{region}/{name}", summoner.getRegion(), summoner.getName()))
+        restSummonerMockMvc
+                .perform(get("/api/summoners/by-name/{region}/{name}", summoner.getRegion(), summoner.getName()))
                 .andExpect(status().isOk())
                 // .andExpect(jsonPath("$.id").value(summoner.getId().intValue()))
                 .andExpect(jsonPath("$.name").value(DEFAULT_NAME.toString()))

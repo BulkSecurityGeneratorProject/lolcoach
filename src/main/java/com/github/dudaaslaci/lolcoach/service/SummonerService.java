@@ -28,4 +28,12 @@ public class SummonerService {
         return summoner;
     }
 
+    public Summoner findById(String region, Long id) {
+        Summoner summoner = summonerRepository.findOne(id);
+        if (null != summoner)
+            return summoner;
+        summoner = riotService.getSummonerById(region, id);
+        return null;
+    }
+
 }

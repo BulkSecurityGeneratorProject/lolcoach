@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.codahale.metrics.annotation.Timed;
 import com.github.dudaaslaci.lolcoach.domain.Summoner;
-import com.github.dudaaslaci.lolcoach.repository.SummonerRepository;
 import com.github.dudaaslaci.lolcoach.service.SummonerService;
 
 /**
@@ -29,42 +28,30 @@ public class SummonerResource {
     private final Logger log = LoggerFactory.getLogger(SummonerResource.class);
 
     @Inject
-    private SummonerRepository summonerRepository;
-
-    @Inject
     private SummonerService summonerService;
 
     /**
-     * GET  /summoners/:id -> get the "id" summoner.
+     * GET /summoners/:id -> get the "id" summoner.
      */
-    @RequestMapping(value = "/summoners/{id}",
-            method = RequestMethod.GET,
-            produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/summoners/{region}/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     @Timed
-    public ResponseEntity<Summoner> get(@PathVariable Long id) {
+    public ResponseEntity<Summoner> get(@PathVariable String region, @PathVariable Long id) {
         log.debug("REST request to get Summoner : {}", id);
-        return Optional.ofNullable(summonerRepository.findOne(id))
-            .map(summoner -> new ResponseEntity<>(
-                summoner,
-                HttpStatus.OK))
-            .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
+        return Optional.ofNullable(summonerService.findById(region, id))
+                .map(summoner -> new ResponseEntity<>(summoner, HttpStatus.OK))
+                .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
     /**
-     * GET  /summoners/:region/:name -> get the "name" summoner from "region" region.
+     * GET /summoners/:region/:name -> get the "name" summoner from "region" region.
      */
-    @RequestMapping(value = "/summoners/{region}/{name}",
-            method = RequestMethod.GET,
-            produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/summoners/by-name/{region}/{name}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     @Timed
-    public ResponseEntity<Summoner> getByName(@PathVariable String region,
-                                              @PathVariable String name) {
+    public ResponseEntity<Summoner> getByName(@PathVariable String region, @PathVariable String name) {
         log.debug("REST request to get Summoner : {}/{}", region, name);
         return Optional.ofNullable(summonerService.findByRegionAndName(region, name))
-            .map(summoner -> new ResponseEntity<>(
-                summoner,
-                HttpStatus.OK))
-            .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
+                .map(summoner -> new ResponseEntity<>(summoner, HttpStatus.OK))
+                .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
 }
