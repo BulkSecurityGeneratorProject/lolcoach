@@ -3,5 +3,5 @@ jdk:
 - oraclejdk8
 before_install:
 - openssl aes-256-cbc -K $encrypted_1a213643d3bb_key -iv $encrypted_1a213643d3bb_iv
-  -in src\\main\\resources\\config\\application.properties.enc -out src\\main\\resources\\config\\application.properties
+  -in src/main/resources/config/application.properties.enc -out src/main/resources/config/application.properties
   -d
