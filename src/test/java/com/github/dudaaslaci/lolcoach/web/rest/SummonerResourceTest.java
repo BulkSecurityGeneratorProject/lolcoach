@@ -63,7 +63,6 @@ public class SummonerResourceTest {
         MockitoAnnotations.initMocks(this);
         SummonerResource summonerResource = new SummonerResource();
         summonerService = new SummonerService();
-        ReflectionTestUtils.setField(summonerResource, "summonerRepository", summonerRepository);
         ReflectionTestUtils.setField(summonerResource, "summonerService", summonerService);
         ReflectionTestUtils.setField(summonerService, "summonerRepository", summonerRepository);
         ReflectionTestUtils.setField(summonerService, "riotService", riotService);
