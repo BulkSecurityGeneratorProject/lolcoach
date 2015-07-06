@@ -21,7 +21,7 @@ public class RiotService {
 
     @Value("${riot-api.key}") private String RIOT_API_KEY;
 
-    Summoner getSummonerByName(String region, String name) {
+    public Summoner getSummonerByName(String region, String name) {
         RestTemplate restTemplate = new RestTemplate();
         ParameterizedTypeReference<Map<String, Summoner>> responseType = new ParameterizedTypeReference<Map<String, Summoner>>() {};
         Summoner summoner = null;
