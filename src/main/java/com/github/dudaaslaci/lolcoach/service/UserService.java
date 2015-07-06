@@ -1,13 +1,12 @@
 package com.github.dudaaslaci.lolcoach.service;
 
-import com.github.dudaaslaci.lolcoach.domain.Authority;
-import com.github.dudaaslaci.lolcoach.domain.PersistentToken;
-import com.github.dudaaslaci.lolcoach.domain.User;
-import com.github.dudaaslaci.lolcoach.repository.AuthorityRepository;
-import com.github.dudaaslaci.lolcoach.repository.PersistentTokenRepository;
-import com.github.dudaaslaci.lolcoach.repository.UserRepository;
-import com.github.dudaaslaci.lolcoach.security.SecurityUtils;
-import com.github.dudaaslaci.lolcoach.service.util.RandomUtil;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Optional;
+import java.util.Set;
+
+import javax.inject.Inject;
+
 import org.joda.time.DateTime;
 import org.joda.time.LocalDate;
 import org.slf4j.Logger;
@@ -17,11 +16,13 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.inject.Inject;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Optional;
-import java.util.Set;
+import com.github.dudaaslaci.lolcoach.domain.Authority;
+import com.github.dudaaslaci.lolcoach.domain.User;
+import com.github.dudaaslaci.lolcoach.repository.AuthorityRepository;
+import com.github.dudaaslaci.lolcoach.repository.PersistentTokenRepository;
+import com.github.dudaaslaci.lolcoach.repository.UserRepository;
+import com.github.dudaaslaci.lolcoach.security.SecurityUtils;
+import com.github.dudaaslaci.lolcoach.service.util.RandomUtil;
 
 /**
  * Service class for managing users.

@@ -1,14 +1,18 @@
 package com.github.dudaaslaci.lolcoach.domain;
 
+import java.io.Serializable;
+import java.util.Objects;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
-
-import javax.persistence.*;
-import javax.validation.constraints.*;
-import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
-import java.util.Objects;
 
 /**
  * A Summoner.
@@ -19,7 +23,6 @@ import java.util.Objects;
 public class Summoner implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @NotNull
@@ -29,9 +32,6 @@ public class Summoner implements Serializable {
     @NotNull
     @Column(name = "region", nullable = false)
     private String region;
-
-    @OneToOne
-    private MatchHistory matchHistory;
 
     public Long getId() {
         return id;
@@ -55,14 +55,6 @@ public class Summoner implements Serializable {
 
     public void setRegion(String region) {
         this.region = region;
-    }
-
-    public MatchHistory getMatchHistory() {
-        return matchHistory;
-    }
-
-    public void setMatchHistory(MatchHistory matchHistory) {
-        this.matchHistory = matchHistory;
     }
 
     @Override
