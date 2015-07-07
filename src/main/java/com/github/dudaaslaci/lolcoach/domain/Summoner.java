@@ -32,7 +32,7 @@ public class Summoner implements Serializable {
     @Column(name = "region", nullable = false)
     private String region;
 
-    private List<MatchSummary> matchHistory;
+//    private List<MatchSummary> matchHistory;
 
     public Long getId() {
         return id;
@@ -88,11 +88,11 @@ public class Summoner implements Serializable {
                 '}';
     }
 
-    public List<MatchSummary> getMatchHistory() {
-        return matchHistory;
-    }
-
-    public void setMatchHistory(List<MatchSummary> matchHistory) {
-        this.matchHistory = matchHistory;
-    }
+//    public List<MatchSummary> getMatchHistory() {
+//        return matchHistory;
+//    }
+//
+//    public void setMatchHistory(List<MatchSummary> matchHistory) {
+//        this.matchHistory = matchHistory;
+//    }
 }
