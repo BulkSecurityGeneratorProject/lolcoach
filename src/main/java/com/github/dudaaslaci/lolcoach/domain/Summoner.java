@@ -1,12 +1,11 @@
 package com.github.dudaaslaci.lolcoach.domain;
 
 import java.io.Serializable;
+import java.util.List;
 import java.util.Objects;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
@@ -32,6 +31,8 @@ public class Summoner implements Serializable {
     @NotNull
     @Column(name = "region", nullable = false)
     private String region;
+
+    private List<MatchSummary> matchHistory;
 
     public Long getId() {
         return id;
@@ -85,5 +86,13 @@ public class Summoner implements Serializable {
                 ", name='" + name + "'" +
                 ", region='" + region + "'" +
                 '}';
+    }
+
+    public List<MatchSummary> getMatchHistory() {
+        return matchHistory;
+    }
+
+    public void setMatchHistory(List<MatchSummary> matchHistory) {
+        this.matchHistory = matchHistory;
     }
 }

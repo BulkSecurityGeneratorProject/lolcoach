@@ -1,0 +1,102 @@
+
+<div>
+    <h2><span translate="lolcoachApp.matchSummary.detail.title">MatchSummary</span> {{matchSummary.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th translate="entity.detail.field">Field</th>
+                    <th translate="entity.detail.value">Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <span translate="lolcoachApp.matchSummary.matchCreation">MatchCreation</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{matchSummary.matchCreation}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="lolcoachApp.matchSummary.mapId">MapId</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{matchSummary.mapId}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="lolcoachApp.matchSummary.matchDuration">MatchDuration</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{matchSummary.matchDuration}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="lolcoachApp.matchSummary.matchId">MatchId</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{matchSummary.matchId}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="lolcoachApp.matchSummary.matchMode">MatchMode</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{matchSummary.matchMode}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="lolcoachApp.matchSummary.matchType">MatchType</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{matchSummary.matchType}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="lolcoachApp.matchSummary.matchVersion">MatchVersion</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{matchSummary.matchVersion}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="lolcoachApp.matchSummary.platformId">PlatformId</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{matchSummary.platformId}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="lolcoachApp.matchSummary.region">Region</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{matchSummary.region}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="lolcoachApp.matchSummary.season">Season</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{matchSummary.season}}" readonly>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            ui-sref="matchSummary"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

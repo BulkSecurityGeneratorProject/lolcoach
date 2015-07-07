@@ -1,0 +1,27 @@
+{
+    "lolcoachApp": {
+        "matchSummary" : {
+            "home": {
+                "title": "MatchSummarys",
+                "createLabel": "Create a new MatchSummary",
+                "createOrEditLabel": "Create or edit a MatchSummary"
+            },
+            "delete": {
+                "question": "Are you sure you want to delete MatchSummary {{ id }}?"
+            },
+            "detail": {
+                "title": "MatchSummary"
+            },
+            "matchCreation": "MatchCreation",
+            "mapId": "MapId",
+            "matchDuration": "MatchDuration",
+            "matchId": "MatchId",
+            "matchMode": "MatchMode",
+            "matchType": "MatchType",
+            "matchVersion": "MatchVersion",
+            "platformId": "PlatformId",
+            "region": "Region",
+            "season": "Season"
+        }
+    }
+}

@@ -1,0 +1,269 @@
+<div>
+
+    <h2 translate="lolcoachApp.matchSummary.home.title">MatchSummarys</h2>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <button class="btn btn-primary" data-toggle="modal" data-target="#saveMatchSummaryModal" ng-click="clear()">
+                    <span class="glyphicon glyphicon-flash"></span> <span translate="lolcoachApp.matchSummary.home.createLabel">Create a new MatchSummary</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="saveMatchSummaryModal" tabindex="-1" role="dialog" aria-labelledby="myMatchSummaryLabel"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form name="editForm" role="form" novalidate ng-submit="save()" show-validation>
+
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                                ng-click="clear()">&times;</button>
+                        <h4 class="modal-title" id="myMatchSummaryLabel" translate="lolcoachApp.matchSummary.home.createOrEditLabel">Create or edit a MatchSummary</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label>ID</label>
+                            <input type="text" class="form-control" name="id"
+                                   ng-model="matchSummary.id" readonly>
+                        </div>
+
+                        <div class="form-group">
+                            <label translate="lolcoachApp.matchSummary.matchCreation">MatchCreation</label>
+                            <input type="number" class="form-control" name="matchCreation"
+                                   ng-model="matchSummary.matchCreation" required>
+
+                            <div ng-show="editForm.matchCreation.$invalid">
+                                <p class="help-block"
+                                   ng-show="editForm.matchCreation.$error.required" translate="entity.validation.required">
+                                    This field is required.
+                                </p>
+                                <p class="help-block"
+                                   ng-show="editForm.matchCreation.$error.number" translate="entity.validation.number">
+                                    This field should be a number.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label translate="lolcoachApp.matchSummary.mapId">MapId</label>
+                            <input type="number" class="form-control" name="mapId"
+                                   ng-model="matchSummary.mapId" required>
+
+                            <div ng-show="editForm.mapId.$invalid">
+                                <p class="help-block"
+                                   ng-show="editForm.mapId.$error.required" translate="entity.validation.required">
+                                    This field is required.
+                                </p>
+                                <p class="help-block"
+                                   ng-show="editForm.mapId.$error.number" translate="entity.validation.number">
+                                    This field should be a number.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label translate="lolcoachApp.matchSummary.matchDuration">MatchDuration</label>
+                            <input type="number" class="form-control" name="matchDuration"
+                                   ng-model="matchSummary.matchDuration" required>
+
+                            <div ng-show="editForm.matchDuration.$invalid">
+                                <p class="help-block"
+                                   ng-show="editForm.matchDuration.$error.required" translate="entity.validation.required">
+                                    This field is required.
+                                </p>
+                                <p class="help-block"
+                                   ng-show="editForm.matchDuration.$error.number" translate="entity.validation.number">
+                                    This field should be a number.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label translate="lolcoachApp.matchSummary.matchId">MatchId</label>
+                            <input type="number" class="form-control" name="matchId"
+                                   ng-model="matchSummary.matchId" required>
+
+                            <div ng-show="editForm.matchId.$invalid">
+                                <p class="help-block"
+                                   ng-show="editForm.matchId.$error.required" translate="entity.validation.required">
+                                    This field is required.
+                                </p>
+                                <p class="help-block"
+                                   ng-show="editForm.matchId.$error.number" translate="entity.validation.number">
+                                    This field should be a number.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label translate="lolcoachApp.matchSummary.matchMode">MatchMode</label>
+                            <input type="text" class="form-control" name="matchMode"
+                                   ng-model="matchSummary.matchMode" required ng-pattern="/(CLASSIC|ODIN|ARAM|TUTORIAL|ONEFORALL|ASCENSION|FIRSTBLOOD|KINGPORO)/">
+
+                            <div ng-show="editForm.matchMode.$invalid">
+                                <p class="help-block"
+                                   ng-show="editForm.matchMode.$error.required" translate="entity.validation.required">
+                                    This field is required.
+                                </p>
+                                <p class="help-block"
+                                   ng-show="editForm.matchMode.$error.pattern" translate="entity.validation.pattern" translate-value-pattern="(CLASSIC|ODIN|ARAM|TUTORIAL|ONEFORALL|ASCENSION|FIRSTBLOOD|KINGPORO)">
+                                    This field should follow pattern "(CLASSIC|ODIN|ARAM|TUTORIAL|ONEFORALL|ASCENSION|FIRSTBLOOD|KINGPORO)".
+                                </p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label translate="lolcoachApp.matchSummary.matchType">MatchType</label>
+                            <input type="text" class="form-control" name="matchType"
+                                   ng-model="matchSummary.matchType" required ng-pattern="/(CUSTOM_GAME|MATCHED_GAME|TUTORIAL_GAME)/">
+
+                            <div ng-show="editForm.matchType.$invalid">
+                                <p class="help-block"
+                                   ng-show="editForm.matchType.$error.required" translate="entity.validation.required">
+                                    This field is required.
+                                </p>
+                                <p class="help-block"
+                                   ng-show="editForm.matchType.$error.pattern" translate="entity.validation.pattern" translate-value-pattern="(CUSTOM_GAME|MATCHED_GAME|TUTORIAL_GAME)">
+                                    This field should follow pattern "(CUSTOM_GAME|MATCHED_GAME|TUTORIAL_GAME)".
+                                </p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label translate="lolcoachApp.matchSummary.matchVersion">MatchVersion</label>
+                            <input type="text" class="form-control" name="matchVersion"
+                                   ng-model="matchSummary.matchVersion" required>
+
+                            <div ng-show="editForm.matchVersion.$invalid">
+                                <p class="help-block"
+                                   ng-show="editForm.matchVersion.$error.required" translate="entity.validation.required">
+                                    This field is required.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label translate="lolcoachApp.matchSummary.platformId">PlatformId</label>
+                            <input type="text" class="form-control" name="platformId"
+                                   ng-model="matchSummary.platformId" required>
+
+                            <div ng-show="editForm.platformId.$invalid">
+                                <p class="help-block"
+                                   ng-show="editForm.platformId.$error.required" translate="entity.validation.required">
+                                    This field is required.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label translate="lolcoachApp.matchSummary.region">Region</label>
+                            <input type="text" class="form-control" name="region"
+                                   ng-model="matchSummary.region" required>
+
+                            <div ng-show="editForm.region.$invalid">
+                                <p class="help-block"
+                                   ng-show="editForm.region.$error.required" translate="entity.validation.required">
+                                    This field is required.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label translate="lolcoachApp.matchSummary.season">Season</label>
+                            <input type="text" class="form-control" name="season"
+                                   ng-model="matchSummary.season" required>
+
+                            <div ng-show="editForm.season.$invalid">
+                                <p class="help-block"
+                                   ng-show="editForm.season.$error.required" translate="entity.validation.required">
+                                    This field is required.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+                            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+                        </button>
+                        <button type="submit" ng-disabled="editForm.$invalid" class="btn btn-primary">
+                            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="deleteMatchSummaryConfirmation">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form name="deleteForm" ng-submit="confirmDelete(matchSummary.id)">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                                ng-click="clear()">&times;</button>
+                        <h4 class="modal-title" translate="entity.delete.title">Confirm delete operation</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p translate="lolcoachApp.matchSummary.delete.question" translate-values="{id: '{{matchSummary.id}}'}">Are you sure you want to delete this MatchSummary?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+                            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+                        </button>
+                        <button type="submit" ng-disabled="deleteForm.$invalid" class="btn btn-danger">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th translate="lolcoachApp.matchSummary.matchCreation">MatchCreation</th>
+                    <th translate="lolcoachApp.matchSummary.mapId">MapId</th>
+                    <th translate="lolcoachApp.matchSummary.matchDuration">MatchDuration</th>
+                    <th translate="lolcoachApp.matchSummary.matchId">MatchId</th>
+                    <th translate="lolcoachApp.matchSummary.matchMode">MatchMode</th>
+                    <th translate="lolcoachApp.matchSummary.matchType">MatchType</th>
+                    <th translate="lolcoachApp.matchSummary.matchVersion">MatchVersion</th>
+                    <th translate="lolcoachApp.matchSummary.platformId">PlatformId</th>
+                    <th translate="lolcoachApp.matchSummary.region">Region</th>
+                    <th translate="lolcoachApp.matchSummary.season">Season</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="matchSummary in matchSummarys">
+                    <td><a ui-sref="matchSummaryDetail({id:matchSummary.id})">{{matchSummary.id}}</a></td>
+                    <td>{{matchSummary.matchCreation}}</td>
+                    <td>{{matchSummary.mapId}}</td>
+                    <td>{{matchSummary.matchDuration}}</td>
+                    <td>{{matchSummary.matchId}}</td>
+                    <td>{{matchSummary.matchMode}}</td>
+                    <td>{{matchSummary.matchType}}</td>
+                    <td>{{matchSummary.matchVersion}}</td>
+                    <td>{{matchSummary.platformId}}</td>
+                    <td>{{matchSummary.region}}</td>
+                    <td>{{matchSummary.season}}</td>
+                    <td>
+                        <button type="submit"
+                                ui-sref="matchSummaryDetail({id:matchSummary.id})"
+                                class="btn btn-info btn-sm">
+                            <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span translate="entity.action.view"> View</span>
+                        </button>
+                        <button type="submit"
+                                ng-click="showUpdate(matchSummary.id)"
+                                class="btn btn-primary btn-sm">
+                            <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
+                        </button>
+                        <button type="submit"
+                                ng-click="delete(matchSummary.id)"
+                                class="btn btn-danger btn-sm">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

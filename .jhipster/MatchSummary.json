@@ -1,0 +1,141 @@
+{
+    "relationships": [],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "matchCreation",
+            "fieldType": "Long",
+            "fieldNameCapitalized": "MatchCreation",
+            "fieldNameUnderscored": "match_creation",
+            "fieldInJavaBeanMethod": "MatchCreation",
+            "fieldValidate": true,
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "mapId",
+            "fieldType": "Integer",
+            "fieldNameCapitalized": "MapId",
+            "fieldNameUnderscored": "map_id",
+            "fieldInJavaBeanMethod": "MapId",
+            "fieldValidate": true,
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "matchDuration",
+            "fieldType": "Long",
+            "fieldNameCapitalized": "MatchDuration",
+            "fieldNameUnderscored": "match_duration",
+            "fieldInJavaBeanMethod": "MatchDuration",
+            "fieldValidate": true,
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldId": 4,
+            "fieldName": "matchId",
+            "fieldType": "Long",
+            "fieldNameCapitalized": "MatchId",
+            "fieldNameUnderscored": "match_id",
+            "fieldInJavaBeanMethod": "MatchId",
+            "fieldValidate": true,
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldId": 5,
+            "fieldName": "matchMode",
+            "fieldType": "String",
+            "fieldNameCapitalized": "MatchMode",
+            "fieldNameUnderscored": "match_mode",
+            "fieldInJavaBeanMethod": "MatchMode",
+            "fieldValidate": true,
+            "fieldValidateRules": [
+                "required",
+                "pattern"
+            ],
+            "fieldValidateRulesPattern": "(CLASSIC|ODIN|ARAM|TUTORIAL|ONEFORALL|ASCENSION|FIRSTBLOOD|KINGPORO)"
+        },
+        {
+            "fieldId": 6,
+            "fieldName": "matchType",
+            "fieldType": "String",
+            "fieldNameCapitalized": "MatchType",
+            "fieldNameUnderscored": "match_type",
+            "fieldInJavaBeanMethod": "MatchType",
+            "fieldValidate": true,
+            "fieldValidateRules": [
+                "required",
+                "pattern"
+            ],
+            "fieldValidateRulesPattern": "(CUSTOM_GAME|MATCHED_GAME|TUTORIAL_GAME)"
+        },
+        {
+            "fieldId": 7,
+            "fieldName": "matchVersion",
+            "fieldType": "String",
+            "fieldNameCapitalized": "MatchVersion",
+            "fieldNameUnderscored": "match_version",
+            "fieldInJavaBeanMethod": "MatchVersion",
+            "fieldValidate": true,
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldId": 8,
+            "fieldName": "platformId",
+            "fieldType": "String",
+            "fieldNameCapitalized": "PlatformId",
+            "fieldNameUnderscored": "platform_id",
+            "fieldInJavaBeanMethod": "PlatformId",
+            "fieldValidate": true,
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldId": 9,
+            "fieldName": "region",
+            "fieldType": "String",
+            "fieldNameCapitalized": "Region",
+            "fieldNameUnderscored": "region",
+            "fieldInJavaBeanMethod": "Region",
+            "fieldValidate": true,
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldId": 10,
+            "fieldName": "season",
+            "fieldType": "String",
+            "fieldNameCapitalized": "Season",
+            "fieldNameUnderscored": "season",
+            "fieldInJavaBeanMethod": "Season",
+            "fieldValidate": true,
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "fieldsContainOwnerManyToMany": false,
+    "fieldsContainOwnerOneToOne": false,
+    "fieldsContainOneToMany": false,
+    "fieldsContainLocalDate": false,
+    "fieldsContainCustomTime": false,
+    "fieldsContainBigDecimal": false,
+    "fieldsContainDateTime": false,
+    "fieldsContainDate": false,
+    "changelogDate": "20150707093123",
+    "dto": "no",
+    "pagination": "no",
+    "validation": true
+}

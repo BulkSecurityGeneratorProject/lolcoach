@@ -8,6 +8,7 @@
                 "main": "Entities",
                 "matchHistory": "MatchHistory",
                 "summoner": "Summoner",
+                "matchSummary": "MatchSummary",
                 "additionalEntity": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {
